@@ -20,7 +20,7 @@ public class InteractionAgent : MonoBehaviour
             if (posDict.ContainsKey(gameObject))
                 posDict.Remove(gameObject);
     }
-    public void Update()
+    public void LateUpdate()
     {
         if (ShaderInteractor.PositionDictionary.TryGetValue(material, out Dictionary<GameObject, Vector3> posDict))
         {
