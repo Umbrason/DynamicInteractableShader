@@ -4,7 +4,7 @@
   "displayName": "Dynamic Interactable Shader",
   "description": "This Package contains a Shader Subgraph and two scripts. Place one instance of the 'Interaction Agent' Script on any object, that should interact with your Shader, per material you want to interact with. You also need one instance of the 'ShaderInteractor' per interactive material",
   "keywords": [
-    "Camera"
+    "Shader"
   ],
   "author": {
     "name": "Umbrason"
