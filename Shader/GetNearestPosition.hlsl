@@ -15,7 +15,7 @@ void GetNearestPosition_float(float interactors, Texture2D positionTexture, floa
     {
         float4 sampled = positionTexture.SampleLevel(my_point_clamp_sampler,float2((i+.5) / interactors, 0),0);
         float3 cur = sampled;
-        float sqrDst = SqrDst(cur, position);
+        float sqrDst = SqrDst(cur, position) / sampled.w;
         if(closestSqrDst >= sqrDst) {
             closest = cur;
             closestSqrDst = sqrDst;

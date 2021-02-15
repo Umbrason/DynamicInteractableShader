@@ -6,6 +6,7 @@ using UnityEngine;
 public class InteractionAgent : MonoBehaviour
 {
     public Material material;
+    public float interactionRange = 1f;
 
     public void OnEnable()
     {
@@ -26,7 +27,7 @@ public class InteractionAgent : MonoBehaviour
         {
             if (posDict.ContainsKey(gameObject))
             {
-                posDict[gameObject] = transform.position;
+                posDict[gameObject] = (Vector4)transform.position + new Vector4(0, 0, 0, interactionRange);
             }
             else posDict.Add(gameObject, transform.position);
         }
