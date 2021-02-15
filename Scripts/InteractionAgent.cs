@@ -27,7 +27,7 @@ public class InteractionAgent : MonoBehaviour
         {
             if (posDict.ContainsKey(gameObject))
             {
-                posDict[gameObject] = (Vector4)transform.position + new Vector4(0, 0, 0, interactionRange * transform.lossyScale.magnitude);
+                posDict[gameObject] = (Vector4)transform.position + new Vector4(0, 0, 0, interactionRange * (transform.lossyScale.x + transform.lossyScale.y + transform.lossyScale.z) / 3);
             }
             else posDict.Add(gameObject, transform.position);
         }
