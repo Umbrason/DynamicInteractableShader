@@ -28,7 +28,7 @@ public class ShaderInteractor : MonoBehaviour
     {
         if (PositionDictionary.TryGetValue(material, out Dictionary<GameObject, Vector4> posDict))
         {
-            Vector3[] positions = posDict.Values.ToArray();
+            Vector4[] positions = posDict.Values.ToArray();
             Texture2D texture2D = new Texture2D(positions.Length, 1, TextureFormat.RGBAFloat, 0, true);
             for (int i = 0; i < positions.Length; i++)
             {
@@ -38,7 +38,7 @@ public class ShaderInteractor : MonoBehaviour
             material.SetTexture("_InteractorPositions", texture2D);
             material.SetFloat("_Interactors", positions.Length);
         }
-        else PositionDictionary.Add(material, new Dictionary<GameObject, Vector3>());
+        else PositionDictionary.Add(material, new Dictionary<GameObject, Vector4>());
     }
 
 }
