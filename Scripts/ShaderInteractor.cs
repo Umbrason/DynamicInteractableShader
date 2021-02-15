@@ -33,12 +33,10 @@ public class ShaderInteractor : MonoBehaviour
             Texture2D texture2D = oldTex;
             if (oldTex == null || oldTex.width != positions.Length)            
                 texture2D = new Texture2D(positions.Length, 1, TextureFormat.RGBAFloat, 0, true);
-            
-
             material.SetTexture("_InteractorPositions", texture2D);
             material.SetFloat("_Interactors", positions.Length);
             if (texture2D != oldTex && oldTex != null)
-                Destroy(oldTex);
+                DestroyImmediate(oldTex);
             oldTex = texture2D;
             for (int i = 0; i < positions.Length; i++)
             {
