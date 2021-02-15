@@ -10,20 +10,20 @@ public class InteractionAgent : MonoBehaviour
 
     public void OnEnable()
     {
-        if (ShaderInteractor.PositionDictionary.TryGetValue(material, out Dictionary<GameObject, Vector3> posDict))
+        if (ShaderInteractor.PositionDictionary.TryGetValue(material, out Dictionary<GameObject, Vector4> posDict))
             if (!posDict.ContainsKey(gameObject))
                 posDict.Add(gameObject, transform.position);
     }
 
     public void OnDisable()
     {
-        if (ShaderInteractor.PositionDictionary.TryGetValue(material, out Dictionary<GameObject, Vector3> posDict))
+        if (ShaderInteractor.PositionDictionary.TryGetValue(material, out Dictionary<GameObject, Vector4> posDict))
             if (posDict.ContainsKey(gameObject))
                 posDict.Remove(gameObject);
     }
     public void LateUpdate()
     {
-        if (ShaderInteractor.PositionDictionary.TryGetValue(material, out Dictionary<GameObject, Vector3> posDict))
+        if (ShaderInteractor.PositionDictionary.TryGetValue(material, out Dictionary<GameObject, Vector4> posDict))
         {
             if (posDict.ContainsKey(gameObject))
             {
