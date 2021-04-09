@@ -13,7 +13,7 @@ public class ShaderInteractor : MonoBehaviour
     void OnEnable()
     {
         UnityEngine.Rendering.RenderPipelineManager.beginCameraRendering += OnCameraRender;
-        if (material == null || PositionDictionary.ContainsKey(material))
+        if (!ValidateMaterial() || PositionDictionary.ContainsKey(material))
         {
             enabled = false;
             return;
@@ -23,6 +23,13 @@ public class ShaderInteractor : MonoBehaviour
     void OnDisable()
     {
         UnityEngine.Rendering.RenderPipelineManager.beginCameraRendering -= OnCameraRender;
+    }
+    
+    private bool ValidateMaterial()
+    {
+        bool HasTextureProperty = material.HasProperty("_InteractorPositions");
+        bool HasCountProperty = material.HasProperty("_Interactors");
+        return material == null || !HasTextureProperty || !HasCountProperty;
     }
 
     public void OnCameraRender(UnityEngine.Rendering.ScriptableRenderContext context, Camera cam)
