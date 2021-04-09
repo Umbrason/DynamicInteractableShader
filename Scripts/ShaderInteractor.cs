@@ -12,13 +12,14 @@ public class ShaderInteractor : MonoBehaviour
 
     void OnEnable()
     {
-        UnityEngine.Rendering.RenderPipelineManager.beginCameraRendering += OnCameraRender;
-        if (!ValidateMaterial() || PositionDictionary.ContainsKey(material))
+        if (!ValidateMaterial())
         {
             enabled = false;
             return;
         }
-        PositionDictionary.Add(material, new Dictionary<GameObject, Vector4>());
+        UnityEngine.Rendering.RenderPipelineManager.beginCameraRendering += OnCameraRender;
+        if (!PositionDictionary.ContainsKey(material))
+            PositionDictionary.Add(material, new Dictionary<GameObject, Vector4>());
     }
     void OnDisable()
     {
