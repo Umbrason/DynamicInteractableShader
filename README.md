@@ -1,5 +1,6 @@
 # What is this package about?
 This Unity Package contains a base for an **interactable shader**, with a **dynamic interactor count**!\
+This means, that once you set up your material you can **add any number of interactors** and even **create or destroy them during runtime**.\
 ![InteractableShaderScreenshot](https://user-images.githubusercontent.com/45980080/114247004-62feb000-9994-11eb-9d45-ed66c504d2ce.PNG)
 
 Using only **two scripts** you can provide a shadergraph with **updating positions of any number of gameObjects**.\
