@@ -2,10 +2,17 @@
 Unity Package containing a base for an interactable shader, with a dynamic interactor count
 
 
-### How to get started
+# How to get started
+### Create a new material
 Start by creating a material using Shader Graph.\
 To be interactable the material must have the following two properties:
-* Texture2D _InteractorPositions
-* Float _Interactors
+* Texture2D '_InteractorPositions'
+* Float     '_Interactors' 
 
-Place one instance of the 'Interaction Agent' Script on any object, that should interact with your Shader, per material you want to interact with. You also need one instance of the 'ShaderInteractor' per interactive material
+### Create a ShaderInteractor
+Next create an empty gameObject and add a 'ShaderInteractor' component to it.\
+Now drag your new material into the material slot of the 'ShaderInteractor' component.\
+This component will keep the shader properties updated.
+
+### Create an InteractionAgent
+The last thing you need to do is to add the 'InteractorAgent' component to any object, that you want to interact with your material.
