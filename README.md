@@ -46,4 +46,5 @@ You can compute the normalized direction towards the nearest 'InteractorAgent'\
 
 ### Use the influence and direction to displace geometry
 Using this influence and direction its possible to move geometry away from the nearest 'InteractionAgent' by multiplying the direction vector with the influence and adding this to the position of each vertex.
+![VertexDisplacement](https://user-images.githubusercontent.com/45980080/114249975-744bba80-999c-11eb-82a1-8e6e17696aaa.PNG)
 
