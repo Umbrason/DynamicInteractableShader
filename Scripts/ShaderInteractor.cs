@@ -31,8 +31,8 @@ public class ShaderInteractor : MonoBehaviour
         {
             Vector4[] positions = posDict.Values.ToArray();
             Texture2D texture2D = oldTex;
-            if (oldTex == null || oldTex.width != positions.Length)            
-                texture2D = new Texture2D(positions.Length, 1, TextureFormat.RGBAFloat, 0, true);
+            if (oldTex == null || oldTex.width != positions.Length)
+                texture2D = new Texture2D(Mathf.Max(1, positions.Length), 1, TextureFormat.RGBAFloat, 0, true);
             material.SetTexture("_InteractorPositions", texture2D);
             material.SetFloat("_Interactors", positions.Length);
             if (texture2D != oldTex && oldTex != null)
