@@ -10,15 +10,15 @@ public class ShaderInteractor : MonoBehaviour
     private Texture2D oldTex;
     public static Dictionary<Material, Dictionary<GameObject, Vector4>> PositionDictionary = new Dictionary<Material, Dictionary<GameObject, Vector4>>();
 
-    public void Awake()
-    {
-        if (PositionDictionary.ContainsKey(material))
-            return;
-        PositionDictionary.Add(material, new Dictionary<GameObject, Vector4>());
-    }
     void OnEnable()
     {
         UnityEngine.Rendering.RenderPipelineManager.beginCameraRendering += OnCameraRender;
+        if (material == null || PositionDictionary.ContainsKey(material))
+        {
+            enabled = false;
+            return;
+        }
+        PositionDictionary.Add(material, new Dictionary<GameObject, Vector4>());
     }
     void OnDisable()
     {
