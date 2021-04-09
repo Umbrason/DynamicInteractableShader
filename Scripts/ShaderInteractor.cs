@@ -24,12 +24,12 @@ public class ShaderInteractor : MonoBehaviour
     {
         UnityEngine.Rendering.RenderPipelineManager.beginCameraRendering -= OnCameraRender;
     }
-    
+
     private bool ValidateMaterial()
     {
         bool HasTextureProperty = material.HasProperty("_InteractorPositions");
         bool HasCountProperty = material.HasProperty("_Interactors");
-        return material == null || !HasTextureProperty || !HasCountProperty;
+        return material != null || HasTextureProperty || HasCountProperty;
     }
 
     public void OnCameraRender(UnityEngine.Rendering.ScriptableRenderContext context, Camera cam)
