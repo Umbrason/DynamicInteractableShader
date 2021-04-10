@@ -50,4 +50,5 @@ Using this influence and direction its possible to move geometry away from the n
 
 # Interactive Grass Shader Example
 ![InteractiveGrassShader](https://user-images.githubusercontent.com/45980080/114252098-e2e04680-99a3-11eb-9c89-0bc20f8932b8.gif)\
-The effect in the image above was achieved using the **vector displacement** method mentioned above combined with the **sine of the distance to the most influencial  InteractionAgent** animated over time.
+The effects in the image above were achieved using the **vector displacement** method mentioned above combined with the **sine of the distance to the most influencial  InteractionAgent** animated over time.
+The grass bending in the wind are just two gradient noise samples offset by time.
