@@ -48,7 +48,7 @@ You can compute the normalized direction towards the nearest 'InteractorAgent'\
 Using this influence and direction its possible to move geometry away from the nearest 'InteractionAgent' by multiplying the direction vector with the influence and adding this to the position of each vertex.
 ![VertexDisplacement](https://user-images.githubusercontent.com/45980080/114249975-744bba80-999c-11eb-82a1-8e6e17696aaa.PNG)
 
-# Interactive Grass Shader Example
+# Example: Interactive Grass Shader
 ![InteractiveGrassShader](https://user-images.githubusercontent.com/45980080/114252098-e2e04680-99a3-11eb-9c89-0bc20f8932b8.gif)\
 The effects in the image above were achieved using the **vector displacement** method mentioned above combined with the **sine of the distance to the most influencial  InteractionAgent** animated over time.
 The grass bending in the wind are just two gradient noise samples offset by time.
