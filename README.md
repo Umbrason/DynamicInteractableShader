@@ -13,7 +13,7 @@ Start by creating a material using Shader Graph.\
 To be interactable the material must have the following two properties:
 * Texture2D '_InteractorPositions'
 * Float     '_Interactors' 
-\
+
 ![Properties](https://user-images.githubusercontent.com/45980080/114247747-3186e400-9996-11eb-90c5-cc0b9695885e.PNG)
 
 ### Create a ShaderInteractor
