@@ -1,11 +1,19 @@
 # What is this package about?
-This Unity Package contains a base for an **interactable shader**, with a **dynamic interactor count**!\
-This means, that once you set up your material you can **add any number of interactors** and even **create or destroy them during runtime**.\
-![InteractableShaderScreenshot](https://user-images.githubusercontent.com/45980080/114247004-62feb000-9994-11eb-9d45-ed66c504d2ce.PNG)
+This Unity Package was created for the use with **Shadergraph** for the **UPR and HDRP**.\
+It contains a subgraph and two scripts for an **interactable shader**, with a **dynamic interactor count**.\
 
-Using only **two scripts** you can provide a shadergraph with **updating positions of any number of gameObjects**.\
-This package was created for the use with **shadergraph** in the **UPR or HDRP**.\
+Once you set up your material you can **add any number of interactors** and even **create or destroy them during runtime**.\
+This interactive shader approach also supports unique radii for interactors.
+
+![InteractableShaderScreenshot](https://user-images.githubusercontent.com/45980080/114247004-62feb000-9994-11eb-9d45-ed66c504d2ce.PNG)
 Each interactor provides the material with its position and radius of influence, allowing for dynamic materials to interact with objects in the scene.
+
+# How do I Install this package?
+
+Open the **Package Manager** and click the '+' button.\
+Choose **'add package from git URL...'** then paste the **git URL** of this repository and press 'Add'.\
+![GitURLButton](https://user-images.githubusercontent.com/45980080/114253417-6f8e0300-99aa-11eb-8744-beaf33319d0c.PNG) \
+git URL: https://github.com/Umbrason/DynamicInteractableShader.git
 
 # How do I set up a dynamic material?
 ### Create a new material
