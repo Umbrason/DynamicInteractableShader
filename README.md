@@ -5,7 +5,7 @@ It contains a subgraph and two scripts for an **interactable shader**, with a **
 Once you set up your material you can **add any number of interactors** and even **create or destroy them during runtime**.\
 This interactive shader approach also supports unique radii for interactors.
 
-![InteractableShaderScreenshot](https://user-images.githubusercontent.com/45980080/114247004-62feb000-9994-11eb-9d45-ed66c504d2ce.PNG)
+![InteractableShaderScreenshot](https://user-images.githubusercontent.com/45980080/114247004-62feb000-9994-11eb-9d45-ed66c504d2ce.PNG)\
 Each interactor provides the material with its position and radius of influence, allowing for dynamic materials to interact with objects in the scene.
 
 # How do I Install this package?
