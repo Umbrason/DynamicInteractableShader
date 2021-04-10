@@ -23,9 +23,9 @@ This component will keep the shader properties updated.\
 ![ShaderInteractor](https://user-images.githubusercontent.com/45980080/114247043-76aa1680-9994-11eb-8c47-3e4b7f9d4ab8.PNG)
 
 ### Create an InteractionAgent
-The last thing you need to do is to add the 'InteractorAgent' component to any object, that you want to interact with your material.\
-You also need to drag the new material into the material slot of the 'InteractionAgent' component.\
-The 'InteractionSize' property can be used to control the the 'strength' or 'radius' of the influence the 'InteractionAgent' has.
+Finally you need to add a 'InteractorAgent' component to any object, that you want to interact with your material.
+You also need to drag the new material into the material slot of the 'InteractionAgent' component.
+The 'InteractionSize' property can be used to control the the 'strength' or 'radius' of the influence the 'InteractionAgent' has.\
 ![Interaction Agent](https://user-images.githubusercontent.com/45980080/114247037-74e05300-9994-11eb-8a5d-5fb3bd8c74cb.PNG)
 
 # How do I make my material do stuff?
