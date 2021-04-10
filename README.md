@@ -28,8 +28,8 @@ You also need to drag the new material into the material slot of the *Interactio
 The *InteractionSize* property can be used to control the the 'strength' or 'radius' of the influence the *InteractionAgent* has.\
 ![Interaction Agent](https://user-images.githubusercontent.com/45980080/114247037-74e05300-9994-11eb-8a5d-5fb3bd8c74cb.PNG)
 
-# How do I make my material do stuff?
-Inside the Shadergraph you can access the interactor with the strongest influence at any given point using a Subgraph called *NearestPositionFromTexture*.\
+# How do I make my material react to InteractionAgents?
+Inside the Shadergraph you can access the *InteractorAgent* with the strongest influence at any given point using a Subgraph called *NearestPositionFromTexture*.\
 Plug in the *Texture2D* and *Float* properties into their respective sockets and a Vector3 into the position node of the Subgraph and it will output the position and *InteractionSize* of the *InteractorAgent* with the strongest influence on any given position.\
 ![NearestPositionSubgraph](https://user-images.githubusercontent.com/45980080/114247641-e1a81d00-9995-11eb-8ec3-4c9a52257bc9.PNG)
 
