@@ -56,7 +56,7 @@ You can also compute the normalized direction away from the nearest *InteractorA
 Using this influence and direction its possible to move geometry away from the nearest *InteractionAgent* by multiplying the direction vector with the influence and adding this to the position of each vertex.\
 ![VertexDisplacement](https://user-images.githubusercontent.com/45980080/114249975-744bba80-999c-11eb-82a1-8e6e17696aaa.PNG)
 
-# Example: Interactive Grass Shader
+# An Interactive Grass Shader
 Below is a GIF of a **grass shader reacting** to the **position of multiple InteractionAgents** represented as drones.\
 The *InteractionSize* property of the InteractionAgent is scaled by the magnitude of the scale of each drone, resulting in a wider effect radius for the large drone.\
 They move around in real time and their position is updated in the shader respectively.\
