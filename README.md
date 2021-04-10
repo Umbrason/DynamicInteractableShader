@@ -13,7 +13,7 @@ Start by creating a material using Shader Graph.\
 To be interactable the material must have the following two properties:
 * Texture2D '_InteractorPositions'
 * Float     '_Interactors' 
-
+\
 ![Properties](https://user-images.githubusercontent.com/45980080/114247747-3186e400-9996-11eb-90c5-cc0b9695885e.PNG)
 
 ### Create a ShaderInteractor
@@ -40,12 +40,12 @@ Using this property you can normalize the values be in the range of 0-1.\
 ![normalizedDistance](https://user-images.githubusercontent.com/45980080/114248711-a5c28700-9998-11eb-8e93-5d93bc017e67.PNG)
 
 
-### Calculate the direction towards the nearest InteractionAgent
-You can compute the normalized direction towards the nearest 'InteractorAgent'\
+### Calculate the direction away from the nearest InteractionAgent
+You can also compute the normalized direction away from the nearest 'InteractorAgent' like below.\
 ![NormalizedDirection](https://user-images.githubusercontent.com/45980080/114248707-a529f080-9998-11eb-877c-94a91f081dc1.PNG)
 
 ### Use the influence and direction to displace geometry
-Using this influence and direction its possible to move geometry away from the nearest 'InteractionAgent' by multiplying the direction vector with the influence and adding this to the position of each vertex.
+Using this influence and direction its possible to move geometry away from the nearest 'InteractionAgent' by multiplying the direction vector with the influence and adding this to the position of each vertex.\
 ![VertexDisplacement](https://user-images.githubusercontent.com/45980080/114249975-744bba80-999c-11eb-82a1-8e6e17696aaa.PNG)
 
 # Example: Interactive Grass Shader
