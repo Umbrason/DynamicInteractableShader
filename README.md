@@ -49,6 +49,10 @@ Using this influence and direction its possible to move geometry away from the n
 ![VertexDisplacement](https://user-images.githubusercontent.com/45980080/114249975-744bba80-999c-11eb-82a1-8e6e17696aaa.PNG)
 
 # Example: Interactive Grass Shader
+Below is a GIF of a **grass shader reacting** to the **position of multiple InteractionAgents** represented as drones.\
+The 'InteractionSize' property of the InteractionAgent is scaled by the magnitude of the scale of each drone, resulting in a wider effect radius for the large drone.\
+They move around in real time and their position is updated in the shader respectively.\
 ![InteractiveGrassShader](https://user-images.githubusercontent.com/45980080/114252098-e2e04680-99a3-11eb-9c89-0bc20f8932b8.gif)\
-The effects in the image above were achieved using the **vector displacement** method mentioned above combined with the **sine of the distance to the most influencial  InteractionAgent** animated over time.
-The grass bending in the wind are just two gradient noise samples offset by time.
+
+The effects in the GIF were achieved using the **vector displacement** method mentioned above but multiplied with the **sine of the distance to the most influencial  InteractionAgent** and with its phase animated over time.
+The illusion of the grass bending in the wind is just the result of two gradient noise samples added to the vertex displacement and offset over time.
