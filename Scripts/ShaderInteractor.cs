@@ -24,7 +24,7 @@ public class ShaderInteractor : MonoBehaviour
     void OnDisable()
     {
         UnityEngine.Rendering.RenderPipelineManager.beginCameraRendering -= OnCameraRender;
-        if (!PositionDictionary.ContainsKey(material))
+        if(PositionDictionary.ContainsKey(material))
             PositionDictionary.Remove(material);
     }
 
