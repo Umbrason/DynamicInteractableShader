@@ -51,7 +51,7 @@ public class ShaderInteractor : MonoBehaviour
             Texture2D texture2D = oldTex;
             if (oldTex == null || oldTex.width != maxInteractors || oldTex.height != maxChannel)
             {
-                texture2D = new Texture2D(maxInteractors, posDict.Count, TextureFormat.RGBAFloat, 0, true);
+                texture2D = new Texture2D(maxInteractors, maxChannel, TextureFormat.RGBAFloat, 0, true);
                 material.SetTexture("_InteractorPositions", texture2D);
                 material.SetFloat("_Interactors", maxInteractors);
                 material.SetFloat("_ChannelCount", maxChannel);
