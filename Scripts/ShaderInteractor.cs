@@ -49,9 +49,9 @@ public class ShaderInteractor : MonoBehaviour
             }
 
             Texture2D texture2D = oldTex;
-            if (oldTex == null || oldTex.width != maxInteractors || oldTex.height != maxChannel)
+            if (oldTex == null || oldTex.width != maxInteractors + 1 || oldTex.height != maxChannel)
             {
-                texture2D = new Texture2D(maxInteractors, maxChannel, TextureFormat.RGBAFloat, 0, true);
+                texture2D = new Texture2D(maxInteractors + 1, maxChannel, TextureFormat.RGBAFloat, 0, true);
                 material.SetTexture("_InteractorPositions", texture2D);
                 material.SetFloat("_Interactors", maxInteractors);
                 material.SetFloat("_ChannelCount", maxChannel);
@@ -63,8 +63,9 @@ public class ShaderInteractor : MonoBehaviour
             {
                 Vector4[] positions = posDict[key].Values.ToArray();
                 oldTex = texture2D;
+                texture2D.SetPixel(0, key, new Vector4(positions.Length, 0, 0, 0));
                 for (int j = 0; j < positions.Length; j++)
-                    texture2D.SetPixel(j, key, positions[j] - (Vector4)cam.transform.position);
+                    texture2D.SetPixel(j + 1, key, positions[j] - (Vector4)cam.transform.position);
                 texture2D.Apply();
             }
         }
