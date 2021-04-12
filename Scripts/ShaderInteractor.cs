@@ -24,7 +24,7 @@ public class ShaderInteractor : MonoBehaviour
     void OnDisable()
     {
         UnityEngine.Rendering.RenderPipelineManager.beginCameraRendering -= OnCameraRender;
-        if(PositionDictionary.ContainsKey(material))
+        if (PositionDictionary.ContainsKey(material))
             PositionDictionary.Remove(material);
     }
 
@@ -41,9 +41,12 @@ public class ShaderInteractor : MonoBehaviour
         if (PositionDictionary.TryGetValue(material, out Dictionary<int, Dictionary<GameObject, Vector4>> posDict))
         {
             int maxInteractors = 1;
-            int maxChannel = posDict.Keys.Max() + 1;
+            int maxChannel = 1;
             foreach (int key in posDict.Keys)
+            {
                 maxInteractors = Mathf.Max(posDict[key].Count, maxInteractors);
+                maxChannel = Mathf.Max(key + 1, maxChannel);
+            }
 
             Texture2D texture2D = oldTex;
             if (oldTex == null || oldTex.width != maxInteractors || oldTex.height != maxChannel)
