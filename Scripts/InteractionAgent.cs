@@ -47,7 +47,7 @@ public class InteractionAgent : MonoBehaviour
         if (oldChannel != channel || material != oldMaterial)
         {
             //Get Dictionary by old channel ID and material
-            if (oldMaterial != null || oldChannel != null)
+            if (oldMaterial != null && oldChannel != null)
                 if (ShaderInteractor.PositionDictionary.TryGetValue(oldMaterial, out Dictionary<int, Dictionary<GameObject, Vector4>> channelPosDict) && channelPosDict.TryGetValue(oldChannel, out Dictionary<GameObject, Vector4> posDict))
                     posDict.Remove(gameObject);
             oldChannel = channel;
