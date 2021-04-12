@@ -6,7 +6,7 @@ float SqrDst(float4 A, float3 Pos)
 }
 float Square(float A)
 {
-    return Max(0.001f, A * A);
+    return max(0.001f, A * A);
 }
 
 SamplerState my_point_clamp_sampler;
