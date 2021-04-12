@@ -13,7 +13,7 @@ SamplerState my_point_clamp_sampler;
 void GetNearestPosition_float(float interactors, float channel, float channelCount, Texture2D positionTexture, float3 position, out float4 Out)
 {
     float channelIndex = (.5 + channel) / channelCount;
-    float channelInteractionCount = positionTexture.SampleLevel(my_point_clamp_sampler, float2(.5f, channelIndex),0)
+    float channelInteractionCount = positionTexture.SampleLevel(my_point_clamp_sampler, float2(.5f, channelIndex),0);
     float4 cur = positionTexture.SampleLevel(my_point_clamp_sampler, float2(1.5f / interactors, channelIndex),0);
     float4 closest = cur;
     float closestSqrDst = SqrDst(closest, position) / Square(A);
