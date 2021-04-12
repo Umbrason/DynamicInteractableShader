@@ -8,6 +8,7 @@ public class InteractionAgent : MonoBehaviour
     public Material material;
     public float interactionRange = 1f;
     public int channel = 0;
+    private int lastChannel;
 
     public void OnEnable()
     {
@@ -26,18 +27,20 @@ public class InteractionAgent : MonoBehaviour
     }
     public void LateUpdate()
     {
+        if (lastChannel != channel)
+        {
+            if (ShaderInteractor.PositionDictionary.TryGetValue(material, out Dictionary<int, Dictionary<GameObject, Vector4>> channelPosDict) && ShaderInteractor.PositionDictionary.TryGetValue(lastChannel, out Dictionary<GameObject, Vector4> positionDictionary))
+                positionDictionary.Remove(gameObject);
+            lastChannel = channel;
+        }
         if (ShaderInteractor.PositionDictionary.TryGetValue(material, out Dictionary<int, Dictionary<GameObject, Vector4>> channelPosDict))
             if (channelPosDict.TryGetValue(channel, out Dictionary<GameObject, Vector4> posDict))
             {
                 if (posDict.ContainsKey(gameObject))
-                {
                     posDict[gameObject] = (Vector4)transform.position + new Vector4(0, 0, 0, interactionRange * (transform.lossyScale.x + transform.lossyScale.y + transform.lossyScale.z) / 3);
-                }
                 else posDict.Add(gameObject, transform.position);
             }
             else
-            {
                 channelPosDict.Add(channel, new Dictionary<GameObject, Vector4>());
-            }
     }
 }
