@@ -55,6 +55,7 @@ public class ShaderInteractor : MonoBehaviour
                 material.SetTexture("_InteractorPositions", texture2D);
                 material.SetFloat("_Interactors", maxInteractors);
                 material.SetFloat("_ChannelCount", maxChannel);
+                Debug.Log("changed texture");
             }
             if (texture2D != oldTex && oldTex != null)
                 DestroyImmediate(oldTex);
