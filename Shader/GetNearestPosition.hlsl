@@ -14,11 +14,11 @@ void GetNearestPosition_float(float interactors, float channel, float channelCou
     float channelInteractionCount = positionTexture.SampleLevel(my_point_clamp_sampler, float2(.5f, channelIndex),0);
     float4 cur = positionTexture.SampleLevel(my_point_clamp_sampler, float2(1.5f / interactors, channelIndex),0);
     float4 closest = cur;
-    float closestSqrDst = SqrDst(closest, position) / SquareClamp(A);
+    float closestSqrDst = SqrDst(closest, position) / SquareClamp(cur.w);
     for(int i = 1; i < channelInteractionCount; i++)
     {
         cur = positionTexture.SampleLevel(my_point_clamp_sampler, float2((i+1.5f) / interactors, channelIndex),0);
-        float sqrDst = SqrDst(cur, position) / SquareClamp(A);
+        float sqrDst = SqrDst(cur, position) / SquareClamp(cur.w);
         if(closestSqrDst >= sqrDst) {
             closest = cur;
             closestSqrDst = sqrDst;
