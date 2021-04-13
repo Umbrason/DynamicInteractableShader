@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 
-[ExecuteInEditMode]
+[ExecuteAlways]
 public class ShaderInteractor : MonoBehaviour
 {
     public Material material;
@@ -52,23 +52,22 @@ public class ShaderInteractor : MonoBehaviour
             if (oldTex == null || oldTex.width != maxInteractors + 1 || oldTex.height != maxChannel)
             {
                 texture2D = new Texture2D(maxInteractors + 1, maxChannel, TextureFormat.RGBAFloat, 0, true);
-                material.SetTexture("_InteractorPositions", texture2D);
-                material.SetFloat("_Interactors", maxInteractors);
-                material.SetFloat("_ChannelCount", maxChannel);
-                Debug.Log("changed texture");
             }
             if (texture2D != oldTex && oldTex != null)
                 DestroyImmediate(oldTex);
+            material.SetFloat("_Interactors", maxInteractors);
+            material.SetFloat("_ChannelCount", maxChannel);
+            material.SetTexture("_InteractorPositions", texture2D);
 
-            foreach (int key in posDict.Keys)
+            foreach (int channel in posDict.Keys)
             {
-                Vector4[] positions = posDict[key].Values.ToArray();
-                oldTex = texture2D;
-                texture2D.SetPixel(0, key, new Vector4(positions.Length, 0, 0, 0));
+                Vector4[] positions = posDict[channel].Values.ToArray();
+                oldTex = texture2D;                
+                texture2D.SetPixel(0, channel, Vector4.one * positions.Length);                
                 for (int j = 0; j < positions.Length; j++)
-                    texture2D.SetPixel(j + 1, key, positions[j] - (Vector4)cam.transform.position);
-                texture2D.Apply();
+                    texture2D.SetPixel(j + 1, channel, positions[j] - (Vector4)cam.transform.position);
             }
+            texture2D.Apply();
         }
         else PositionDictionary.Add(material, new Dictionary<int, Dictionary<GameObject, Vector4>>());
     }
