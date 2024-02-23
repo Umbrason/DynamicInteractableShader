@@ -27,7 +27,7 @@ To be interactable the material must have the following two properties:
 ### Create a ShaderInteractor
 Next create a new GameObject and add a *ShaderInteractor* component to it.\
 Now drag the new material into the material slot of the *ShaderInteractor* component.
-This component will keep the shader properties updated.
+This component will keep the shader properties updated.\
 ![ShaderInteractor](https://user-images.githubusercontent.com/45980080/114247043-76aa1680-9994-11eb-8c47-3e4b7f9d4ab8.PNG)
 
 ### Create an InteractionAgent
